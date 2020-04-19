@@ -1,17 +1,20 @@
-//INITIAL VARIABLES VARIABLES!!!!!!1111!!
-//array of different words based on historical civilizations of ancient times
+//Sections of codes for Game
+//1. Random Words
+//2. Word Selection
+//3. Guessing the letter/current guess
+//4. Guess remaining
+//5. Letters already guessed
+//6. End Conditions (win/los)
+//7. Display the number of wins
+
+
+
+//Array dealing with Words
 var words = ["Roxalani", "Alani", "Alans", "Scythians", "Romans", "Macedonians", "Athenians", "Spartans", "Carthigians", "Sarmatians", "Dacians"];
-
-//random word selection
 var word = words[Math.floor(Math.random() * words.length)];
+var remainingLetters = word.length;
 
-//answer array
 var answerArray = [];
 for (var i = 0; i < word.length; i++) {
     answerArray[i] = "_";
 }
-//Remaining letters
-var remainingLetters = word.length;
-
-
-//GAME SECTION
