@@ -80,17 +80,6 @@ var game = Hangman();
 
 //function for onkeyup to start game
 document.onkeyup = function (event) {
-
-    //stop function
-    if (wordIndex === words.length) {
-        return;
-    }
-
-    //Determines what  which key was pressed and makes it lowercase
-    var userGuess = event.key.toLowerCase();
-};
-
-document.onkeyup = function (event) {
     var userGuess = event.key.toLowerCase();
 
     if (validGuess.includes(userGuess) && !game.guessedLetters) {
@@ -98,7 +87,10 @@ document.onkeyup = function (event) {
     }
 } else {
     game.updatePageData();
-}
+
+    //Determines what  which key was pressed and makes it lowercase
+    var userGuess = event.key.toLowerCase();
+};
 
 //correct guess
 
