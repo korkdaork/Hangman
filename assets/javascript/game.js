@@ -70,7 +70,7 @@ document.onkeyup = function (event) {
 }
 
 
-//need to write code on what happens once user presses a key
+//function for letter changing from "_ _ _ _ _" to "A _ a _ _ _"
 
 
 //display what letter was guessed and storing letters and wins
