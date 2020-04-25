@@ -13,18 +13,18 @@ var remainLetters = word.length;
 var wins = 0;
 //2d.  Valid letter guesses
 var validGuess = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
-var answerArray = ["_"];
+var answerArray = [];
 
 
 //3.  SECTION 1:  GETTING THE WORD  IN "_" BLANK SPACES
 //3b. Generate a word
 function renderWord() {
     document.querySelector("#selected-word").innerHTML = "Selected Word: " + word;
-    //3b1.  letters in word changed into underscore "_"
+    //3b1. Target variable and replace the letters in the variable into underscore "_"
     for (var i = 0; i < word.length; i++) {
         answerArray[i] = "_"
     };
-    console.log(remainLetters)
+    console.log(answerArray)
 };
 
 
