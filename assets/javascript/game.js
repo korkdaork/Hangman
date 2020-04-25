@@ -14,6 +14,10 @@ var wins = 0;
 //2d.  Valid letter guesses
 var validGuess = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
 var answerArray = [];
+var dashStore = [];
+var remainGuess = 11;
+var remainGuessLtr = [];
+var dashArray = [];
 
 
 //3.  SECTION 1:  GETTING THE WORD  IN "_" BLANK SPACES
@@ -22,32 +26,52 @@ function renderWord() {
     document.querySelector("#selected-word").innerHTML = "Selected Word: " + word;
     //3b1. Target variable and replace the letters in the variable into underscore "_"
     for (var i = 0; i < word.length; i++) {
-        answerArray[i] = "_"
+        answerArray[i] = " _ ";
+        // dashStore = dashStore + answerArray[i];
     };
-    console.log(answerArray)
+    // document.querySelector("#selected-word").innerHTML = dashStore;
+
+    console.log(word)
 };
-
-
 
 function renderWins() {
     document.querySelector("#wins").innerHTML = "Wins: " + wins;
 };
 
+function renderDash() {
+    for (var i = 0; i < word.length; i++) {
+        dashArray[i] = " _ ";
+        dashStore = dashStore + answerArray[i];
+        document.querySelector("#selected-word").innerHTML = dashStore;
+    };
+};
 
 //3c. Replace the letters in a word with "_" spaces
 
 //3d. Calling the functions
 renderWord()
 renderWins()
+renderDash()
 
 //4.  SECTION 2:  USER LETTER GUESS
 //4a.  Start Function (onkeyup)
 document.onkeyup = function (event) {
-    document.querySelector("#selected-word").innerHTML = "_" + word;
     var userGuess = event.key.toLowerCase();
-    for (var j = 0; i < validGuess.length; i++) {
-        answerArray[j]
+    for (var i = 0; i < word.length; i++) {
+        if (userGuess == word[i]) {
+            dashStore[i] = word[i];
+            console.log("match")
+        }
+        console.log(userGuess)
+        console.log(word[i])
+        // else {
+        //     remainGuess--;
+
+        //     remainGuessLtr = remainGuessLtr + " " + userGuess;
+        //     document.querySelector("#guessed-letters").innerHTML = "Letters Already Guessed: " + remainGuessLtr;
+        // }
     };
+    document.querySelector("#selected-word").innerHTML = dashStore;
 };
 
 console.log(answerArray)
