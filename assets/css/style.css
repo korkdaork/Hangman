@@ -11,6 +11,14 @@ body {
 
 }
 
+img {
+    width: 100%;
+    max-width: 900px;
+    position: relative;
+    border: 2px solid darkblue;
+    
+}
+
 .container {
     width: 100%;
     max-width: 960px;
@@ -59,24 +67,24 @@ h2, h3 {
 .leftbox {
     background: whitesmoke;
     padding: 30px;
-    margin: 0 0 1px 0px;
+    margin: 0 0 0 10%;
     width: 100%;
-    max-width: 49%;
+    max-width: 35%;
     float: left;
     border: 1px solid gray;
     margin-bottom: 20px;
-    height: 700px;
+    height: 965px;
 }
 
 .rightbox {
     background: whitesmoke;
     padding: 30px;
-    margin: 0 0 1px 37px;
+    margin: 0 0 0 10%;
     width: 100%;
-    max-width: 49%;
+    max-width: 35%;
     float: left;
     border: 1px solid gray;
     margin-bottom: 20px;
-    height: 700px;
+    height: 965px;
 }
 
