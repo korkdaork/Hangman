@@ -80,7 +80,7 @@ renderGuessedLetters();
 
 //4.  SECTION 2:  USER LETTER GUESS
 //4a.  Start Function (onkeyup)
-document.onkeyup = function (event) {
+document.onkeydown = function (event) {
     var userGuess = event.key.toUpperCase();
 
     if (wordIndex === word.length) {
@@ -100,8 +100,9 @@ document.onkeyup = function (event) {
                 // alert("You Lose!");
             }
         }
+        console.log("max tries:", maxTries)
 
-        console.log(userGuess)
+        console.log("user guess:", userGuess)
         //     remainGuess--;
 
         //     remainGuessLtr = remainGuessLtr + " " + userGuess;
