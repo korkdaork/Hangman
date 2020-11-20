@@ -59,7 +59,9 @@ function renderMaxTries() {
 
 //Generating/
 function renderGuessedLetters() {
-    document.querySelector("#guessed-letters").innerHTML = "Letters Already Guessed: " + guessedLetters;
+    const node = document.createElement("P");
+    node.innerHTML = guessedLetters;
+    document.querySelector("#guessed-letters").appendChild(node);
 
     // document.querySelector("#guessed-letters").innerHTML = guess;
 };
