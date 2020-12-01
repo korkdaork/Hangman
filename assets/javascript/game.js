@@ -77,7 +77,6 @@ renderWins()
 renderMaxTries()
 renderGuessedLetters();
 
-
 //4.  SECTION 2:  USER LETTER GUESS
 //4a.  Start Function (onkeyup)
 document.onkeydown = function (event) {
@@ -87,19 +86,20 @@ document.onkeydown = function (event) {
         return;
     }
 
+
     for (var i = 0; i < word.length; i++) {
         if (userGuess === word[i]) {
             answerArray[i] = word[i];
 
         } else {
             renderGuessedLetters();
-            maxTries -= 1;
-            renderMaxTries()
+            renderMaxTries();
             if
                 (maxTries === 0) {
                 // alert("You Lose!");
             }
-        }
+        };
+
         console.log("max tries:", maxTries)
 
         console.log("user guess:", userGuess)
