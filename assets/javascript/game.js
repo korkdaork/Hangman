@@ -20,6 +20,7 @@ var gameStarted = false;
 var gameFinished = false;
 //2c. Wins variable
 var wins = 0;
+var correctLetter = true;
 
 var selectedWord = document.querySelector("#selected-word").innerHTML;
 
@@ -82,27 +83,24 @@ renderGuessedLetters();
 document.onkeydown = function (event) {
     var userGuess = event.key.toUpperCase();
 
-    if (wordIndex === word.length) {
-        return;
-    }
-
-
     for (var i = 0; i < word.length; i++) {
         if (userGuess === word[i]) {
             answerArray[i] = word[i];
-
         } else {
             renderGuessedLetters();
             renderMaxTries();
+            correctLetter = false;
             if
                 (maxTries === 0) {
                 // alert("You Lose!");
             }
+
         };
 
         console.log("max tries:", maxTries)
 
         console.log("user guess:", userGuess)
+
         //     remainGuess--;
 
         //     remainGuessLtr = remainGuessLtr + " " + userGuess;
@@ -110,10 +108,12 @@ document.onkeydown = function (event) {
         // }
     };
 
+    if (correctLetter === false) {
+        maxTries -= 1;
+    };
+
     renderWord();
     renderGuessedLetters();
-
-
 };
 
 console.log(answerArray)
