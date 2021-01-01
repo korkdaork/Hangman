@@ -86,13 +86,15 @@ document.onkeydown = function (event) {
     for (var i = 0; i < word.length; i++) {
         if (userGuess === word[i]) {
             answerArray[i] = word[i];
+            correctLetter = true;
         } else {
             renderGuessedLetters();
             renderMaxTries();
             correctLetter = false;
             if
                 (maxTries === 0) {
-                // alert("You Lose!");
+                alert("You Lose!");
+                return;
             }
 
         };
@@ -108,8 +110,10 @@ document.onkeydown = function (event) {
         // }
     };
 
-    if (correctLetter === false) {
+    if (correctLetter == false) {
         maxTries -= 1;
+    } else {
+        correctLetter = true;
     };
 
     renderWord();
